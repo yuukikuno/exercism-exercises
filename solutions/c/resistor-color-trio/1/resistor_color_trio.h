@@ -1,0 +1,23 @@
+#ifndef RESISTOR_COLOR_TRIO_H
+#define RESISTOR_COLOR_TRIO_H
+
+#include <stdint.h>
+
+typedef enum {
+    OHMS, KILOOHMS, MEGAOHMS, GIGAOHMS
+} unit_t;
+
+#define COLORS                                                                 \
+  BLACK, BROWN, RED, ORANGE, YELLOW, GREEN, BLUE, VIOLET, GREY, WHITE
+
+typedef enum {
+    COLORS
+} resistor_band_t;
+
+typedef struct resistor_value {
+    int16_t value;
+    unit_t unit;
+} resistor_value_t;
+
+resistor_value_t color_code (resistor_band_t[3]);
+#endif
